@@ -38,11 +38,12 @@
                                                 &kp LGUI     &lt 3 TAB      &mt LCTRL SPACE        &mt LALT BKSP  &lt 1 RET    &mt LGUI DEL
                         >;
                 };
+                
                 lower_layer {
                         bindings = <
-   &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5         &kp F1   &kp F2      &kp F3    &kp F4      &kp F5   &kp F6
-   &kp LCTRL  &kp N6  &kp N7  &kp N8    &kp N9  &kp N0         &kp F7   &kp F8      &kp F9    &kp F10     &kp F11  &kp F12
-   &kp LSHFT  &none   &none   &none     &none   &none          &none    &kp LSHFT   &kp LALT  &kp LGUI    &LCTRL   &none
+   &kp ESC    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5         &kp F1   &kp F2      &kp F3    &kp F4      &kp F5      &kp F6
+   &kp LCTRL  &kp N6  &kp N7  &kp N8    &kp N9  &kp N0         &kp F7   &kp F8      &kp F9    &kp F10     &kp F11     &kp F12
+   &kp LSHFT  &none   &none   &none     &none   &none          &none    &kp LSHFT   &kp LALT  &kp LGUI    &kp LCTRL   &none
                               &kp LGUI  &trans  &kp SPACE      &none    &none       &none
                         >;
                 };
