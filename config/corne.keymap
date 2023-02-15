@@ -27,7 +27,7 @@
         combos {
             compatible = "zmk,combos";
             // external-left & external-right thumb keys
-            combo_sym2 {
+            combo_fnc {
                     timeout-ms = <200>;
                     key-positions = <30 33>;
                     bindings = <&mo FNC>;
@@ -36,13 +36,13 @@
             combo_settings {
                     timeout-ms = <300>;
                     key-positions = <30 31>;
-                    bindings = <&mo SETTINGS>;
+                    bindings = <&sl SETTINGS>;
             };
 	    // both right thumb keys
-            combo_settings {
+            combo_settings2 {
                     timeout-ms = <300>;
                     key-positions = <32 33>;
-                    bindings = <&mo SETTINGS>;
+                    bindings = <&sl SETTINGS>;
             };
         };
         
@@ -92,7 +92,7 @@ XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp TAB    &kp LC(V)      &kp LC(BSPC) &kp B
 // BT Settings
        		settings_layer {
 		        bindings = <
-XXXXX XXXXX       XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 &bt BT_CLR XXXXX XXXXX XXXXX       XXXXX
+XXXXX &kp K       XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 &bt BT_CLR XXXXX XXXXX XXXXX       XXXXX
 XXXXX XXXXX       XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX      XXXXX XXXXX XXXXX       XXXXX
 XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX      XXXXX XXXXX &bootloader XXXXX
                         XXXXX XXXXX      XXXXX             XXXXX        XXXXX      XXXXX
