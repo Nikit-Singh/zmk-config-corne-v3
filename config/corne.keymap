@@ -26,25 +26,26 @@
 / {
         combos {
 	    compatible = "zmk,combos";
-	    // both left thumb keys
-            combo_settings {
-                    timeout-ms = <300>;
-                    key-positions = <0 1 2>;
-                    bindings = <&mo SETTINGS>;
-            };
-	    // both right thumb keys
-            combo_settings2 {
-                    timeout-ms = <300>;
-                    key-positions = <8 9 10>;
-                    bindings = <&mo SETTINGS>;
-            };
-            // external-left & external-right thumb keys
-            combo_fnc {
-                    timeout-ms = <200>;
-                    key-positions = <30 33>;
-                    bindings = <&mo FNC>;
-            };
-            
+		 combo_esc {
+		    timeout-ms = <50>;
+		    key-positions = <0 1>;
+		    layers = <0 1 2 3 4>;
+		    bindings = <&kp ESC>;
+		};
+
+		combo_ret {
+		    timeout-ms = <150>;
+		    key-positions = <12 13>;
+		    layers = <0>;
+		    bindings = <&kp ENTER>;
+		};
+		
+		combo_tab {
+		    timeout-ms = <150>;
+		    key-positions = <16 17>;
+		    layers = <0>;
+		    bindings = <&kp TAB>;
+		};
         };
         
         keymap {
@@ -76,7 +77,7 @@ XXXXX &kp GT &kp PRCNT &kp RPAR &kp RBRC &kp RBKT      &kp AT   &kp EXCL  &kp UN
 XXXXX &kp ESC   &kp CAPS  &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
 XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
-                          XXXXX     XXXXX      XXXXX         &kp ENTER    &mo FNC   XXXXX
+                          XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
 		        >;
 		};
 
