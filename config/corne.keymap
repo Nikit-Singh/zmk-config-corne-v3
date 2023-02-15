@@ -19,6 +19,10 @@
 #define XXXXX &none
 #define _____ &trans
 
+&mt {
+    tapping-term-ms = <400>;
+};
+
 / {
         combos {
             compatible = "zmk,combos";
@@ -34,6 +38,12 @@
                     key-positions = <30 31>;
                     bindings = <&mo SETTINGS>;
             };
+	    // both right thumb keys
+            combo_settings {
+                    timeout-ms = <300>;
+                    key-positions = <32 33>;
+                    bindings = <&mo SETTINGS>;
+            };
         };
         
         keymap {
@@ -43,7 +53,7 @@
                 default_layer {
                     bindings = <
 XXXXX &kp Q &kp W &kp E &kp R    &kp T               &kp Y    &kp U   &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H    &kp J   &kp K     &kp L   &kp SQT  XXXXX
+XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H    &kp J   &kp K     &kp L   &kp SEMI XXXXX
 XXXXX &kp Z &kp X &kp C &kp V    &kp B               &kp N    &kp M   &kp COMMA &kp DOT &kp FSLH XXXXX
                   XXXXX &mo MODS &mt LSHFT SPACE     &kp BSPC &sl SYM XXXXX
                     >;
@@ -55,14 +65,14 @@ XXXXX &kp Z &kp X &kp C &kp V    &kp B               &kp N    &kp M   &kp COMMA 
 XXXXX &kp N1 &kp N2    &kp N3   &kp N4   &kp N5        &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   XXXXX
 XXXXX &kp LT &kp DLLR  &kp LPAR &kp LBRC &kp LBKT      &kp STAR &kp EQUAL &kp MINUS &kp PLUS &kp AMPS XXXXX
 XXXXX &kp GT &kp PRCNT &kp RPAR &kp RBRC &kp RBKT      &kp AT   &kp EXCL  &kp UNDER &kp HASH &kp PIPE XXXXX
-                       XXXXX    &mo FNC  XXXXX         XXXXX    XXXXX     XXXXX
+                       XXXXX    &mo FNC  XXXXX         &kp SQT  &kp DQT   XXXXX
                     >;
                 };
 
 // Main modifiers and arrow keys and remaining symbols
 		mods_layer {
 		        bindings = <
-XXXXX &kp ESC   XXXXX     &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CAPS  XXXXX
+XXXXX &kp ESC   &kp CAPS  &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
 XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
                           XXXXX     XXXXX      XXXXX         &kp ENTER    &mo FNC   XXXXX
@@ -75,17 +85,17 @@ XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BS
 XXXXX &kp F1    &kp F2    &kp F3    &kp F4     &kp F5         &kp F6       &kp F7   &kp F8          &kp F9 &kp F10 XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LCTRL      &kp F11      &kp F12  &kp PRINTSCREEN XXXXX  XXXXX   XXXXX
 XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp TAB    &kp LC(V)      &kp LC(BSPC) &kp BSPC &kp DEL         XXXXX  XXXXX   XXXXX
-          				  XXXXX     XXXXX      XXXXX          XXXXX        XXXXX    XXXXX
+          		  XXXXX     XXXXX      XXXXX          XXXXX        XXXXX    XXXXX
 		        >;
 		};
 
 // BT Settings
        		settings_layer {
 		        bindings = <
-XXXXX       XXXXX XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 XXXXX XXXXX XXXXX XXXXX XXXXX
-XXXXX       XXXXX XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX XXXXX XXXXX XXXXX XXXXX
-&bootloader XXXXX XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX XXXXX XXXXX XXXXX &bootloader
-                        XXXXX XXXXX      XXXXX             XXXXX        XXXXX XXXXX
+XXXXX XXXXX       XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 &bt BT_CLR XXXXX XXXXX XXXXX       XXXXX
+XXXXX XXXXX       XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX      XXXXX XXXXX XXXXX       XXXXX
+XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX      XXXXX XXXXX &bootloader XXXXX
+                        XXXXX XXXXX      XXXXX             XXXXX        XXXXX      XXXXX
 		        >;
 		};
         };
