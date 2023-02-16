@@ -23,41 +23,17 @@
     tapping-term-ms = <400>;
 };
 
-/ {
-        combos {
-	    compatible = "zmk,combos";
-		 combo_esc {
-		    timeout-ms = <50>;
-		    key-positions = <0 1>;
-		    layers = <0 1 2 3 4>;
-		    bindings = <&kp ESC>;
-		};
-
-		combo_ret {
-		    timeout-ms = <150>;
-		    key-positions = <12 13>;
-		    layers = <0>;
-		    bindings = <&kp ENTER>;
-		};
-		
-		combo_tab {
-		    timeout-ms = <150>;
-		    key-positions = <16 17>;
-		    layers = <0>;
-		    bindings = <&kp TAB>;
-		};
-        };
-        
+/ {        
         keymap {
                 compatible = "zmk,keymap";
 
 // Base alpha Layer
                 default_layer {
                     bindings = <
-XXXXX &kp Q &kp W &kp E &kp R    &kp T               &kp Y    &kp U   &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H    &kp J   &kp K     &kp L   &kp SEMI XXXXX
-XXXXX &kp Z &kp X &kp C &kp V    &kp B               &kp N    &kp M   &kp COMMA &kp DOT &kp FSLH XXXXX
-                  XXXXX &mo MODS &mt LSHFT SPACE     &kp BSPC &sl SYM XXXXX
+XXXXX &kp Q &kp W &kp E &kp R       &kp T         &kp Y    &kp U       &kp I     &kp O   &kp P    XXXXX
+XXXXX &kp A &kp S &kp D &mt LSHFT F &kp G         &kp H    &mt LSHFT J &kp K     &kp L   &kp SEMI XXXXX
+XXXXX &kp Z &kp X &kp C &kp V       &kp B         &kp N    &kp M       &kp COMMA &kp DOT &kp FSLH XXXXX
+                  XXXXX &sl MODS    &kp SPACE     &kp BSPC &sl SYM     XXXXX
                     >;
                 };
 
@@ -87,7 +63,7 @@ XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BS
 XXXXX &kp F1    &kp F2    &kp F3    &kp F4     &kp F5         &kp F6       &kp F7   &kp F8          &kp F9 &kp F10 XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LCTRL      &kp F11      &kp F12  &kp PRINTSCREEN XXXXX  XXXXX   XXXXX
 XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp TAB    &kp LC(V)      &kp LC(BSPC) &kp BSPC &kp DEL         XXXXX  XXXXX   XXXXX
-          		  XXXXX     XXXXX      XXXXX          XXXXX        XXXXX    XXXXX
+                          XXXXX     XXXXX      XXXXX          XXXXX        XXXXX    XXXXX
 		        >;
 		};
 
