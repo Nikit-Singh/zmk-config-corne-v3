@@ -67,10 +67,10 @@ XXXXX &kp Z &kp X &kp C      &kp V        &kp B              &kp N           &kp
 // Numbers and high frequency symbols
                 sym_layer {
                     bindings = <
-XXXXX &kp N1    &kp N2 &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    XXXXX
-XXXXX &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp PLUS   &kp TILDE XXXXX
-XXXXX &kp GRAVE XXXXX  XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP  XXXXX
-                       XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
+XXXXX &kp N1    &kp N2    &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    XXXXX
+XXXXX &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp PLUS   &kp SQT XXXXX
+XXXXX &kp GRAVE &kp TILDE XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP  XXXXX
+                          XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
                     >;
                 };
 
@@ -107,9 +107,9 @@ XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX   
     // Sym2 Layer
        		sym2_layer {
 		        bindings = <
-XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX &kp LBRC &kp RBRC XXXXX   XXXXX   XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       XXXXX &kp LPAR &kp RPAR &kp SQT &kp DQT XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX &kp LBKT &kp RBKT XXXXX   XXXXX   XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX &kp LBRC &kp RBRC XXXXX XXXXX   XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       XXXXX &kp LPAR &kp RPAR XXXXX &kp DQT XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX &kp LBKT &kp RBKT XXXXX XXXXX   XXXXX
                   XXXXX &kp UNDER &kp MINUS   &kp LT &kp GT  XXXXX
 		        >;
 		};
