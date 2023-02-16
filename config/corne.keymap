@@ -8,6 +8,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <&kp BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 //// Layer definitions
 #define BASE 0
 #define SYM 1
@@ -20,27 +28,51 @@
 #define _____ &trans
 
 &mt {
-    tapping-term-ms = <400>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <220>;
+    quick-tap-ms = <220>;              // repeat on tap-into-hold
+    hold-trigger-key-positions = <0>;  // tap on interrupt
+};
+
+#define QUICK_TAP_MS 175
+
+&sl {  // sticky-layer config
+    ignore-modifiers;
 };
 
 / {        
         combos {
                 compatible = "zmk,combos";
-                combo_esc {
-                        timeout-ms = <50>;
-                        key-positions = <1 2>;
-                        bindings = <&kp ESC>;
-                };
-                combo_tab {
-                        timeout-ms = <50>;
-                        key-positions = <7 8>;
-                        bindings = <&kp TAB>;
-                };
-                combo_caps {
-                        timeout-ms = <50>;
-                        key-positions = <16 19>;
-                        bindings = <&kp CAPS>;
-                };
+
+                COMBO(esc, ESC, 2 3)
+                COMBO(tab, TAB, 3 4)
+                COMBO(caps, CAPS, 13 14)
+                COMBO(equal, EQUAL, 14 15)
+                COMBO(enter, ENTER, 15 16)
+                COMBO(lt, LT, 26 27)
+                COMBO(gt, GT, 27 28)
+                COMBO(at, AT, 2 14)
+                COMBO(hash, HASH, 3 15)
+                COMBO(dllr, DLLR, 4 16)
+                COMBO(prcnt, PRCNT, 5 17)
+                COMBO(excl, EXCL, 14 26)
+                COMBO(grave, GRAVE, 15 27)
+                COMBO(tilde, TILDE, 17 29)
+
+                COMBO(lbrc, LBRC, 7 8)
+                COMBO(rbrc, RBRC, 8 9)
+                COMBO(lpar, LPAR, 19 20)
+                COMBO(rpar, RPAR, 20 21)
+                COMBO(lbkt, LBKT, 31 32)
+                COMBO(rbkt, RBKT, 32 33)
+                COMBO(caret, CARET, 6 18)
+                COMBO(plus, PLUS, 7 19)
+                COMBO(star, STAR, 8 20)
+                COMBO(amps, AMPS, 9 21)
+                COMBO(under, UNDER, 18 30)
+                COMBO(minus, MINUS, 19 31)
+                COMBO(bslh, BSLH, 20 32)
+                COMBO(pipe, PIPE, 21 33)
         };
 
         keymap {
@@ -49,10 +81,10 @@
 // Base alpha Layer
                 default_layer {
                     bindings = <
-XXXXX &kp Q &kp W &kp E &kp R       &kp T               &kp Y    &kp U       &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &mt LSHFT F &kp G               &kp H    &mt LSHFT J &kp K     &kp L   &kp ENTER XXXXX
-XXXXX &kp Z &kp X &kp C &kp V       &kp B               &kp N    &kp M       &kp COMMA &kp DOT &kp FSLH XXXXX
-                  XXXXX &sl MODS    &mt LCTRL SPACE     &kp BSPC &sl SYM     XXXXX
+XXXXX &kp Q &kp W &kp E &kp R    &kp T               &kp Y          &kp U   &kp I     &kp O   &kp P    XXXXX
+XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H          &kp J   &kp K     &kp L   &kp SEMI  XXXXX
+XXXXX &kp Z &kp X &kp C &kp V    &kp B               &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH XXXXX
+                  XXXXX &sl MODS &mt LSHFT SPACE     &mt LCTRL BSPC &sl SYM XXXXX
                     >;
                 };
 
