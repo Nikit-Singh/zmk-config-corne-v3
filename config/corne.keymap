@@ -24,16 +24,35 @@
 };
 
 / {        
+        combos {
+                compatible = "zmk,combos";
+                combo_esc {
+                        timeout-ms = <50>;
+                        key-positions = <1 2>;
+                        bindings = <&kp ESC>;
+                };
+                combo_tab {
+                        timeout-ms = <50>;
+                        key-positions = <7 8>;
+                        bindings = <&kp TAB>;
+                };
+                combo_caps {
+                        timeout-ms = <50>;
+                        key-positions = <16 19>;
+                        bindings = <&kp CAPS>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
 // Base alpha Layer
                 default_layer {
                     bindings = <
-XXXXX &kp Q &kp W &kp E &kp R       &kp T         &kp Y    &kp U       &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &mt LSHFT F &kp G         &kp H    &mt LSHFT J &kp K     &kp L   &kp SEMI XXXXX
-XXXXX &kp Z &kp X &kp C &kp V       &kp B         &kp N    &kp M       &kp COMMA &kp DOT &kp FSLH XXXXX
-                  XXXXX &sl MODS    &kp SPACE     &kp BSPC &sl SYM     XXXXX
+XXXXX &kp Q &kp W &kp E &kp R       &kp T               &kp Y    &kp U       &kp I     &kp O   &kp P    XXXXX
+XXXXX &kp A &kp S &kp D &mt LSHFT F &kp G               &kp H    &mt LSHFT J &kp K     &kp L   &kp ENTER XXXXX
+XXXXX &kp Z &kp X &kp C &kp V       &kp B               &kp N    &kp M       &kp COMMA &kp DOT &kp FSLH XXXXX
+                  XXXXX &sl MODS    &mt LCTRL SPACE     &kp BSPC &sl SYM     XXXXX
                     >;
                 };
 
@@ -52,8 +71,8 @@ XXXXX &kp GT &kp PRCNT &kp RPAR &kp RBRC &kp RBKT      &kp AT   &kp EXCL  &kp UN
 		        bindings = <
 XXXXX &kp ESC   &kp CAPS  &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
-XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
-                          XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
+XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp COLON &kp DEL   &kp TILDE &kp BSLH  XXXXX
+                          XXXXX     XXXXX      &mo SETTINGS  &kp SEMI     &mo FNC   XXXXX
 		        >;
 		};
 
