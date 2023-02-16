@@ -22,6 +22,7 @@
 #define MODS 2
 #define FNC 3
 #define SETTINGS 4
+#define SYM2 5
 // -----------------
 
 #define XXXXX &none
@@ -47,24 +48,7 @@
                 COMBO(grave, &kp GRAVE, 1 2)
                 COMBO(esc, &kp ESC, 2 3)
                 COMBO(tab, &kp TAB, 3 4)
-                COMBO(caps, &caps_word, 13 14)
-                COMBO(equal, &kp EQUAL, 14 15)
-                COMBO(enter, &kp ENTER, 15 16)
-                COMBO(lt, &kp LT, 26 27)
-                COMBO(gt, &kp GT, 27 28)
- 
-                COMBO(lbrc, &kp LBRC, 7 8)
-                COMBO(rbrc, &kp RBRC, 8 9)
-                COMBO(lpar, &kp LPAR, 19 20)
-                COMBO(rpar, &kp RPAR, 20 21)
-                COMBO(lbkt, &kp LBKT, 31 32)
-                COMBO(rbkt, &kp RBKT, 32 33)
-                COMBO(under, &kp UNDER, 6 7)
-                COMBO(minus, &kp MINUS, 9 10)
-                COMBO(sqt, &kp SQT, 18 19)
-                COMBO(dqt, &kp DQT, 21 22)
-                COMBO(bslh, &kp BSLH, 33 34)
-                COMBO(pipe, &kp PIPE, 30 31)
+                COMBO(caps, &caps_word, 25 26)
         };
 
         keymap {
@@ -73,20 +57,20 @@
 // Base alpha Layer
                 default_layer {
                     bindings = <
-XXXXX &kp Q &kp W &kp E &kp R        &kp T              &kp Y           &kp U         &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &mt LSHIFT F &kp G              &kp H           &mt LSHIFT J  &kp K     &kp L   &kp SEMI XXXXX
-XXXXX &kp Z &kp X &kp C &kp V        &kp B              &kp N           &kp M         &kp COMMA &kp DOT &kp FSLH XXXXX
-                  XXXXX &sl MODS     &mt LCTRL SPACE    &mt LSHIFT BSPC &lt SYM ENTER XXXXX
+XXXXX &kp Q &kp W &kp E      &kp R        &kp T              &kp Y           &kp U         &kp I     &kp O   &kp P    XXXXX
+XXXXX &kp A &kp S &lt SYM2 D &mt LSHIFT F &kp G              &kp H           &mt LSHIFT J  &kp K     &kp L   &kp SEMI XXXXX
+XXXXX &kp Z &kp X &kp C      &kp V        &kp B              &kp N           &kp M         &kp COMMA &kp DOT &kp FSLH XXXXX
+                  XXXXX      &sl MODS     &mt LCTRL SPACE    &mt LGUI BSPC &lt SYM ENTER XXXXX
                     >;
                 };
 
 // Numbers and high frequency symbols
                 sym_layer {
                     bindings = <
-XXXXX &kp N1   &kp N2 &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0   XXXXX
-XXXXX &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp TILDE  &kp PLUS XXXXX
-XXXXX XXXXX    XXXXX  XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP XXXXX
-                      XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
+XXXXX &kp N1    &kp N2 &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    XXXXX
+XXXXX &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp PLUS   &kp TILDE XXXXX
+XXXXX &kp GRAVE XXXXX  XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP  XXXXX
+                       XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
                     >;
                 };
 
@@ -117,6 +101,16 @@ XXXXX XXXXX       XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 &bt BT_C
 XXXXX &kp O       XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX      XXXXX XXXXX &kp A       XXXXX
 XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX      XXXXX XXXXX &bootloader XXXXX
                         XXXXX XXXXX      XXXXX             XXXXX        XXXXX      XXXXX
+		        >;
+		};
+
+    // Sym2 Layer
+       		sym2_layer {
+		        bindings = <
+XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX &kp LBRC &kp RBRC XXXXX   XXXXX   XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       XXXXX &kp LPAR &kp RPAR &kp SQT &kp DQT XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX &kp LBKT &kp RBKT XXXXX   XXXXX   XXXXX
+                  XXXXX &kp UNDER &kp MINUS   &kp LT &kp GT  XXXXX
 		        >;
 		};
         };
