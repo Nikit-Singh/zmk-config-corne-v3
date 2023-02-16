@@ -36,10 +36,6 @@
 
 #define QUICK_TAP_MS 175
 
-&sl {  // sticky-layer config
-    ignore-modifiers;
-};
-
 / {        
         combos {
                 compatible = "zmk,combos";
@@ -49,30 +45,30 @@
                 COMBO(caps, CAPS, 13 14)
                 COMBO(equal, EQUAL, 14 15)
                 COMBO(enter, ENTER, 15 16)
-                COMBO(lt, LT, 26 27)
-                COMBO(gt, GT, 27 28)
-                COMBO(at, AT, 2 14)
-                COMBO(hash, HASH, 3 15)
-                COMBO(dllr, DLLR, 4 16)
-                COMBO(prcnt, PRCNT, 5 17)
-                COMBO(excl, EXCL, 14 26)
-                COMBO(grave, GRAVE, 15 27)
-                COMBO(tilde, TILDE, 17 29)
-
-                COMBO(lbrc, LBRC, 7 8)
-                COMBO(rbrc, RBRC, 8 9)
-                COMBO(lpar, LPAR, 19 20)
-                COMBO(rpar, RPAR, 20 21)
-                COMBO(lbkt, LBKT, 31 32)
-                COMBO(rbkt, RBKT, 32 33)
-                COMBO(caret, CARET, 6 18)
-                COMBO(plus, PLUS, 7 19)
-                COMBO(star, STAR, 8 20)
-                COMBO(amps, AMPS, 9 21)
-                COMBO(under, UNDER, 18 30)
-                COMBO(minus, MINUS, 19 31)
-                COMBO(bslh, BSLH, 20 32)
-                COMBO(pipe, PIPE, 21 33)
+ //               COMBO(lt, LT, 26 27)
+ //               COMBO(gt, GT, 27 28)
+ //               COMBO(at, AT, 2 14)
+ //               COMBO(hash, HASH, 3 15)
+ //               COMBO(dllr, DLLR, 4 16)
+ //               COMBO(prcnt, PRCNT, 5 17)
+ //               COMBO(excl, EXCL, 14 26)
+ //               COMBO(grave, GRAVE, 15 27)
+ //               COMBO(tilde, TILDE, 17 29)
+ //
+ //               COMBO(lbrc, LBRC, 7 8)
+ //               COMBO(rbrc, RBRC, 8 9)
+ //               COMBO(lpar, LPAR, 19 20)
+ //               COMBO(rpar, RPAR, 20 21)
+ //               COMBO(lbkt, LBKT, 31 32)
+ //               COMBO(rbkt, RBKT, 32 33)
+ //               COMBO(caret, CARET, 6 18)
+ //               COMBO(plus, PLUS, 7 19)
+ //               COMBO(star, STAR, 8 20)
+ //               COMBO(amps, AMPS, 9 21)
+ //               COMBO(under, UNDER, 18 30)
+ //               COMBO(minus, MINUS, 19 31)
+ //               COMBO(bslh, BSLH, 20 32)
+ //               COMBO(pipe, PIPE, 21 33)
         };
 
         keymap {
@@ -82,7 +78,7 @@
                 default_layer {
                     bindings = <
 XXXXX &kp Q &kp W &kp E &kp R    &kp T               &kp Y          &kp U   &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H          &kp J   &kp K     &kp L   &kp SEMI  XXXXX
+XXXXX &kp A &kp S &kp D &kp F    &kp G               &kp H          &kp J   &kp K     &kp L   &kp SEMI XXXXX
 XXXXX &kp Z &kp X &kp C &kp V    &kp B               &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH XXXXX
                   XXXXX &sl MODS &mt LSHFT SPACE     &mt LCTRL BSPC &sl SYM XXXXX
                     >;
@@ -103,8 +99,8 @@ XXXXX &kp GT &kp PRCNT &kp RPAR &kp RBRC &kp RBKT      &kp AT   &kp EXCL  &kp UN
 		        bindings = <
 XXXXX &kp ESC   &kp CAPS  &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
-XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp COLON &kp DEL   &kp TILDE &kp BSLH  XXXXX
-                          XXXXX     XXXXX      &mo SETTINGS  &kp SEMI     &mo FNC   XXXXX
+XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
+                          XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
 		        >;
 		};
 
