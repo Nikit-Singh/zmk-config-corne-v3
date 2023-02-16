@@ -73,30 +73,30 @@
 // Base alpha Layer
                 default_layer {
                     bindings = <
-XXXXX &kp Q &kp W &kp E &kp R        &kp T              &kp Y          &kp U        &kp I     &kp O   &kp P    XXXXX
-XXXXX &kp A &kp S &kp D &mt LSHIFT F &kp G              &kp H          &mt LSHIFT J &kp K     &kp L   &kp SEMI XXXXX
-XXXXX &kp Z &kp X &kp C &kp V        &kp B              &kp N          &kp M        &kp COMMA &kp DOT &kp FSLH XXXXX
-                  XXXXX &sl MODS     &mt LCTRL SPACE   &mt LSHIFT BSPC &sl SYM      XXXXX
+XXXXX &kp Q &kp W &kp E &kp R        &kp T              &kp Y           &kp U        &kp I     &kp O   &kp P    XXXXX
+XXXXX &kp A &kp S &kp D &mt LSHIFT F &kp G              &kp H           &mt LSHIFT J &kp K     &kp L   &kp SEMI XXXXX
+XXXXX &kp Z &kp X &kp C &kp V        &kp B              &kp N           &kp M        &kp COMMA &kp DOT &kp FSLH XXXXX
+                  XXXXX &sl MODS     &mt LCTRL SPACE    &mt LSHIFT BSPC &sl SYM      XXXXX
                     >;
                 };
 
 // Numbers and high frequency symbols
                 sym_layer {
                     bindings = <
-XXXXX &kp N1   &kp N2 &kp N3   &kp N4   &kp N5        &kp N6    &kp N7   &kp N8   &kp N9    &kp N0   XXXXX
-XXXXX &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp STAR &kp TILDE &kp PLUS XXXXX
-XXXXX XXXXX    XXXXX  XXXXX    XXXXX    C_MUTE        C_PREV    C_VOL_DN C_VOL_UP C_NEXT    C_PP     XXXXX
-                      XXXXX    &mo FNC  XXXXX         XXXXX     XXXXX    XXXXX
+XXXXX &kp N1   &kp N2 &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0   XXXXX
+XXXXX &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp TILDE  &kp PLUS XXXXX
+XXXXX XXXXX    XXXXX  XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP XXXXX
+                      XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
                     >;
                 };
 
 // Main modifiers and arrow keys and remaining symbols
 		mods_layer {
 		        bindings = <
-XXXXX &kp ESC   &caps_word &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   XXXXX XXXXX
-XXXXX &sk LALT  &sk LGUI   &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT XXXXX XXXXX
-XXXXX &kp LG(Z) &kp LG(X)  &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   XXXXX     XXXXX XXXXX
-                           XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
+XXXXX &kp ESC   XXXXX     XXXXX     XXXXX      XXXXX         &kp HOME     &kp PG_DN    &kp PG_UP &kp END   XXXXX XXXXX
+XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT XXXXX XXXXX
+XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V)  XXXXX         &kp LA(BSPC) &kp LC(BSPC) &kp DEL   XXXXX     XXXXX XXXXX
+                          XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC      XXXXX
 		        >;
 		};
 
@@ -105,7 +105,7 @@ XXXXX &kp LG(Z) &kp LG(X)  &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp B
 		        bindings = <
 XXXXX &kp F1    &kp F2    &kp F3    &kp F4     &kp F5         &kp F6       &kp F7   &kp F8          &kp F9 &kp F10 XXXXX
 XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LCTRL      &kp F11      &kp F12  &kp PRINTSCREEN XXXXX  XXXXX   XXXXX
-XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp TAB    &kp LC(V)      &kp LC(BSPC) &kp BSPC &kp DEL         XXXXX  XXXXX   XXXXX
+XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V)  XXXXX          &kp LC(BSPC) XXXXX    &kp DEL         XXXXX  XXXXX   XXXXX
                           XXXXX     XXXXX      XXXXX          XXXXX        XXXXX    XXXXX
 		        >;
 		};
