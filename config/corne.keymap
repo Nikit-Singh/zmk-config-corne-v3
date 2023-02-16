@@ -8,13 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define COMBO(NAME, BINDINGS, KEYPOS) \
-  combo_##NAME { \
-    timeout-ms = <50>; \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    layers = <0>; \
-  };
+#define COMBO(name, keypress, keypos) \
+    combo_##name {                    \
+        layers = <0>;                 \
+        timeout-ms = <30>;            \
+        bindings = <keypress>;        \
+        key-positions = <keypos>;     \
+    };
 
 //// Layer definitions
 #define BASE 0
@@ -27,14 +27,18 @@
 #define XXXXX &none
 #define _____ &trans
 
+#define TAPPING_TERM 210
+#define QUICK_TAP    150
+
 &mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <220>;
-    quick-tap-ms = <220>;              // repeat on tap-into-hold
-    hold-trigger-key-positions = <0>;  // tap on interrupt
+  flavor = "balanced";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP>;
 };
 
-#define QUICK_TAP_MS 175
+&caps_word {
+	continue-list = <UNDER MINUS BSPC RSHFT LSHFT>;
+};
 
 / {        
         combos {
@@ -45,30 +49,30 @@
                 COMBO(caps, &kp CAPS, 13 14)
                 COMBO(equal, &kp EQUAL, 14 15)
                 COMBO(enter, &kp ENTER, 15 16)
- //               COMBO(lt, &kp LT, 26 27)
- //               COMBO(gt, &kp GT, 27 28)
- //               COMBO(at, &kp AT, 2 14)
- //               COMBO(hash, &kp HASH, 3 15)
- //               COMBO(dllr, &kp DLLR, 4 16)
- //               COMBO(prcnt, &kp PRCNT, 5 17)
- //               COMBO(excl, &kp EXCL, 14 26)
- //               COMBO(grave, &kp GRAVE, 15 27)
- //               COMBO(tilde, &kp TILDE, 17 29)
- //
- //               COMBO(lbrc, &kp LBRC, 7 8)
- //               COMBO(rbrc, &kp RBRC, 8 9)
- //               COMBO(lpar, &kp LPAR, 19 20)
- //               COMBO(rpar, &kp RPAR, 20 21)
- //               COMBO(lbkt, &kp LBKT, 31 32)
- //               COMBO(rbkt, &kp RBKT, 32 33)
- //               COMBO(caret, &kp CARET, 6 18)
- //               COMBO(plus, &kp PLUS, 7 19)
- //               COMBO(star, &kp STAR, 8 20)
- //               COMBO(amps, &kp AMPS, 9 21)
- //               COMBO(under, &kp UNDER, 18 30)
- //               COMBO(minus, &kp MINUS, 19 31)
- //               COMBO(bslh, &kp BSLH, 20 32)
- //               COMBO(pipe, &kp PIPE, 21 33)
+                COMBO(lt, &kp LT, 26 27)
+                COMBO(gt, &kp GT, 27 28)
+                COMBO(at, &kp AT, 2 14)
+                COMBO(hash, &kp HASH, 3 15)
+                COMBO(dllr, &kp DLLR, 4 16)
+                COMBO(prcnt, &kp PRCNT, 5 17)
+                COMBO(excl, &kp EXCL, 14 26)
+                COMBO(grave, &kp GRAVE, 15 27)
+                COMBO(tilde, &kp TILDE, 17 29)
+ 
+                COMBO(lbrc, &kp LBRC, 7 8)
+                COMBO(rbrc, &kp RBRC, 8 9)
+                COMBO(lpar, &kp LPAR, 19 20)
+                COMBO(rpar, &kp RPAR, 20 21)
+                COMBO(lbkt, &kp LBKT, 31 32)
+                COMBO(rbkt, &kp RBKT, 32 33)
+                COMBO(caret, &kp CARET, 6 18)
+                COMBO(plus, &kp PLUS, 7 19)
+                COMBO(star, &kp STAR, 8 20)
+                COMBO(amps, &kp AMPS, 9 21)
+                COMBO(under, &kp UNDER, 18 30)
+                COMBO(minus, &kp MINUS, 19 31)
+                COMBO(bslh, &kp BSLH, 20 32)
+                COMBO(pipe, &kp PIPE, 21 33)
         };
 
         keymap {
@@ -97,10 +101,10 @@ XXXXX &kp GT &kp PRCNT &kp RPAR &kp RBRC &kp RBKT      &kp AT   &kp EXCL  &kp UN
 // Main modifiers and arrow keys and remaining symbols
 		mods_layer {
 		        bindings = <
-XXXXX &kp ESC   &kp CAPS  &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
-XXXXX &sk LALT  &sk LGUI  &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
-XXXXX &kp LG(Z) &kp LG(X) &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
-                          XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
+XXXXX &kp ESC   &caps_word &kp LCTRL &kp LALT   &kp LGUI      &kp HOME     &kp PG_DN &kp PG_UP &kp END   &kp CARET XXXXX
+XXXXX &sk LALT  &sk LGUI   &sk LCTRL &sk LSHIFT &kp LALT      &kp LEFT     &kp DOWN  &kp UP    &kp RIGHT &kp GRAVE XXXXX
+XXXXX &kp LG(Z) &kp LG(X)  &kp LG(C) &kp TAB    &kp LG(V)     &kp LA(BSPC) &kp BSPC  &kp DEL   &kp TILDE &kp BSLH  XXXXX
+                           XXXXX     XXXXX      &mo SETTINGS  &kp ENTER    &mo FNC   XXXXX
 		        >;
 		};
 
