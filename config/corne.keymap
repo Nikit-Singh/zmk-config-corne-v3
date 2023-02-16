@@ -40,41 +40,7 @@
 	continue-list = <UNDER MINUS BSPC RSHFT LSHFT>;
 };
 
-/ {        
-        combos {
-                compatible = "zmk,combos";
-
-                COMBO(esc, &kp ESC, 2 3)
-                COMBO(tab, &kp TAB, 3 4)
-                COMBO(caps, &kp CAPS, 13 14)
-                COMBO(equal, &kp EQUAL, 14 15)
-                COMBO(enter, &kp ENTER, 15 16)
-                COMBO(lt, &kp LT, 26 27)
-                COMBO(gt, &kp GT, 27 28)
-                COMBO(at, &kp AT, 2 14)
-                COMBO(hash, &kp HASH, 3 15)
-                COMBO(dllr, &kp DLLR, 4 16)
-                COMBO(prcnt, &kp PRCNT, 5 17)
-                COMBO(excl, &kp EXCL, 14 26)
-                COMBO(grave, &kp GRAVE, 15 27)
-                COMBO(tilde, &kp TILDE, 17 29)
- 
-                COMBO(lbrc, &kp LBRC, 7 8)
-                COMBO(rbrc, &kp RBRC, 8 9)
-                COMBO(lpar, &kp LPAR, 19 20)
-                COMBO(rpar, &kp RPAR, 20 21)
-                COMBO(lbkt, &kp LBKT, 31 32)
-                COMBO(rbkt, &kp RBKT, 32 33)
-                COMBO(caret, &kp CARET, 6 18)
-                COMBO(plus, &kp PLUS, 7 19)
-                COMBO(star, &kp STAR, 8 20)
-                COMBO(amps, &kp AMPS, 9 21)
-                COMBO(under, &kp UNDER, 18 30)
-                COMBO(minus, &kp MINUS, 19 31)
-                COMBO(bslh, &kp BSLH, 20 32)
-                COMBO(pipe, &kp PIPE, 21 33)
-        };
-
+/ {         
         keymap {
                 compatible = "zmk,keymap";
 
