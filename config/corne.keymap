@@ -43,7 +43,6 @@
         combos {
                 compatible = "zmk,combos";
 
-                COMBO(grave, &kp GRAVE, 1 2)
                 COMBO(esc, &kp ESC, 1 2)
                 COMBO(esc2, &kp ESC, 2 3)
                 COMBO(tab, &kp TAB, 3 4)
