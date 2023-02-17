@@ -16,14 +16,12 @@
         key-positions = <keypos>;     \
     };
 
-//// Layer definitions
 #define BASE 0
 #define SYM 1
 #define MODS 2
 #define FNC 3
 #define SETTINGS 4
 #define SYM2 5
-// -----------------
 
 #define XXXXX &none
 #define _____ &trans
@@ -33,8 +31,8 @@
 
 &mt {
   flavor = "balanced";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP>;
+  tapping-term-ms = <TAPPING_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
 };
 
 &caps_word {
@@ -48,7 +46,13 @@
                 COMBO(grave, &kp GRAVE, 1 2)
                 COMBO(esc, &kp ESC, 2 3)
                 COMBO(tab, &kp TAB, 3 4)
-                COMBO(caps, &caps_word, 25 26)
+                COMBO(caps, &caps_word, 13 14)
+                COMBO(equal, &kp EQUAL, 15 16)
+
+                COMBO(under, &kp UNDER, 7 8)
+                COMBO(minus, &kp MINUS, 8 9)
+                COMBO(sqt, &kp SQT, 19 20)
+                COMBO(colon, &kp COLON, 20 21)
         };
 
         keymap {
@@ -98,7 +102,7 @@ XXXXX &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V)  XXXXX          &kp LC(BSPC) XXXXX
        		settings_layer {
 		        bindings = <
 XXXXX XXXXX       XXXXX XXXXX &bt BT_CLR &bt BT_SEL 0      &bt BT_SEL 3 &bt BT_CLR XXXXX XXXXX XXXXX       XXXXX
-XXXXX &kp O       XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX      XXXXX XXXXX &kp A       XXXXX
+XXXXX XXXXX       XXXXX XXXXX XXXXX      &bt BT_SEL 1      &bt BT_SEL 4 XXXXX      XXXXX XXXXX XXXXX       XXXXX
 XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX      XXXXX XXXXX &bootloader XXXXX
                         XXXXX XXXXX      XXXXX             XXXXX        XXXXX      XXXXX
 		        >;
@@ -107,10 +111,10 @@ XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX   
     // Sym2 Layer
        		sym2_layer {
 		        bindings = <
-XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX &kp LBRC &kp RBRC XXXXX XXXXX   XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       XXXXX &kp LPAR &kp RPAR XXXXX &kp DQT XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX &kp LBKT &kp RBKT XXXXX XXXXX   XXXXX
-                  XXXXX &kp UNDER &kp MINUS   &kp LT &kp GT  XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX   &kp LBRC &kp RBRC &kp RBRC XXXXX   XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       &kp SQT &kp LPAR &kp RPAR &kp RPAR &kp DQT XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX   &kp LBKT &kp RBKT &kp RBKT XXXXX   XXXXX
+                  XXXXX &kp UNDER &kp MINUS   &kp LT  &kp GT  XXXXX
 		        >;
 		};
         };
