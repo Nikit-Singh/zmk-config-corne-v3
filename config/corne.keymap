@@ -53,7 +53,9 @@
                 COMBO(under, &kp UNDER, 7 8)
                 COMBO(minus, &kp MINUS, 8 9)
                 COMBO(sqt, &kp SQT, 19 20)
-                COMBO(colon, &kp COLON, 20 21)
+                COMBO(dqt, &kp DQT, 20 21)
+                COMBO(colon, &kp COLON, 31 32)
+                COMBO(qmark, &kp QMARK, 32 33)
         };
 
         keymap {
