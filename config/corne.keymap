@@ -44,10 +44,12 @@
                 compatible = "zmk,combos";
 
                 COMBO(grave, &kp GRAVE, 1 2)
-                COMBO(esc, &kp ESC, 2 3)
+                COMBO(esc, &kp ESC, 1 2)
+                COMBO(esc2, &kp ESC, 2 3)
                 COMBO(tab, &kp TAB, 3 4)
                 COMBO(caps, &caps_word, 13 14)
                 COMBO(equal, &kp EQUAL, 15 16)
+                COMBO(plus, &kp PLUS, 27 28)
 
                 COMBO(under, &kp UNDER, 7 8)
                 COMBO(minus, &kp MINUS, 8 9)
@@ -71,10 +73,10 @@ XXXXX &mt LGUI Z &kp X &kp C      &kp V        &kp B              &kp N         
 // Numbers and high frequency symbols
                 sym_layer {
                     bindings = <
-XXXXX &kp N1    &kp N2    &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    XXXXX
-XXXXX &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp PLUS   &kp SQT XXXXX
-XXXXX &kp GRAVE &kp TILDE XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP  XXXXX
-                          XXXXX    &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
+XXXXX &kp N1   &kp N2 &kp N3   &kp N4   &kp N5        &kp N6     &kp N7       &kp N8       &kp N9     &kp N0    XXXXX
+XXXXX &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR     &kp GRAVE  &kp TILDE XXXXX
+XXXXX XXXXX    XXXXX  XXXXX    XXXXX    &kp C_MUTE    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP  XXXXX
+                      &kp N0   &mo FNC  XXXXX         XXXXX      XXXXX        XXXXX
                     >;
                 };
 
@@ -111,10 +113,10 @@ XXXXX &bootloader XXXXX XXXXX XXXXX      &bt BT_SEL 2      &bt BT_SEL 5 XXXXX   
     // Sym2 Layer
        		sym2_layer {
 		        bindings = <
-XXXXX XXXXX XXXXX XXXXX &kp PIPE  XXXXX       XXXXX   &kp LBRC &kp RBRC &kp RBRC XXXXX   XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp EQUAL XXXXX       &kp SQT &kp LPAR &kp RPAR &kp RPAR &kp DQT XXXXX
-XXXXX XXXXX XXXXX XXXXX &kp BSLH  XXXXX       XXXXX   &kp LBKT &kp RBKT &kp RBKT XXXXX   XXXXX
-                  XXXXX &kp UNDER &kp MINUS   &kp LT  &kp GT  XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp BSLH XXXXX       XXXXX   &kp LBRC &kp RBRC &kp RBRC XXXXX   XXXXX
+XXXXX XXXXX XXXXX XXXXX &kp PIPE XXXXX       &kp SQT &kp LPAR &kp RPAR &kp RPAR &kp DQT XXXXX
+XXXXX XXXXX XXXXX XXXXX XXXXX    XXXXX       XXXXX   &kp LBKT &kp RBKT &kp RBKT XXXXX   XXXXX
+                  XXXXX XXXXX    &kp LT      &kp GT  XXXXX    XXXXX
 		        >;
 		};
         };
